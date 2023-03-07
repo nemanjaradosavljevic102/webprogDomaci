@@ -1,27 +1,44 @@
 import java.util.Random;
 import java.util.concurrent.Callable;
 
-public class Student implements Callable<String> {
+public class Student {
 
     Random rnd = new Random();
     private double duzinaOdbrane;
     private int ocena;
-    private Object pregledac;
-
+    private boolean isProfesor;
+    private int id;
     // Random rnd = new Random();
-    public Student(Object pregledac){
+    public Student(boolean isProfesor, int id){
         this.duzinaOdbrane = Math.random() * 0.5 + 0.5;
-        int sansa = rnd.nextInt(10) + 1;
-        this.pregledac = pregledac;
-    }
-    @Override
-    public String call() throws Exception {
-        try {
-            Thread.sleep((int)(duzinaOdbrane*1000));
-        }catch (RuntimeException e){
-            throw new RuntimeException(e);
-        }
+      //  int sansa = rnd.nextInt(10) + 1;
+       // if(sansa < 6)
+       //     pregledac = (Profesor)pregledac;
+      //  else
+        //    pregledac = (Asistent)pregledac;
 
-        return null;
+        this.isProfesor = isProfesor;
+        this.id = id;
+
+    }
+
+    public int getOcena() {
+        return ocena;
+    }
+
+    public void setOcena(int ocena) {
+        this.ocena = ocena;
+    }
+
+    public boolean isProfesor() {
+        return isProfesor;
+    }
+
+    public double getDuzinaOdbrane() {
+        return duzinaOdbrane;
+    }
+
+    public int getId() {
+        return id;
     }
 }
