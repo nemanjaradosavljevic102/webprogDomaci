@@ -1,4 +1,8 @@
-public class Asistent {
+public class Asistent implements Runnable{
 
 
+    @Override
+    public void run() {
+
+    }
 }
