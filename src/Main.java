@@ -13,7 +13,7 @@ public class Main {
         Thread asistent = new Thread(new Asistent());
         ExecutorService executorServiceFixed = Executors.newFixedThreadPool(n);
 
-        Future<String> future = executorServiceFixed.submit(new Student());
+      //  Future<String> future = executorServiceFixed.submit(new Student());
 
     }
 }
